@@ -1,0 +1,36 @@
+ColumnLimit: 100
+
+UseTab: Never
+IndentWidth: 4
+AccessModifierOffset: -4
+NamespaceIndentation: Inner
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterNamespace: true
+  AfterEnum: true
+  AfterStruct: true
+  AfterClass: true
+  SplitEmptyFunction: false
+  AfterControlStatement: Always
+  AfterFunction: true
+  AfterUnion: true
+  BeforeElse: true
+
+
+AlwaysBreakTemplateDeclarations: Yes
+BreakConstructorInitializersBeforeComma: true
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+AllowShortBlocksOnASingleLine: Empty
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLoopsOnASingleLine: true
+
+PointerAlignment: Left
+AlignConsecutiveAssignments: false
+AlignTrailingComments: true
+
+SpaceAfterCStyleCast: true
+CommentPragmas: '^ NO-FORMAT:'
+
+

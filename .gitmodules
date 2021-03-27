@@ -1,0 +1,21 @@
+[submodule "extern/gflags"]
+	path = extern/gflags
+	url = https://github.com/gflags/gflags.git
+[submodule "extern/glog"]
+	path = extern/glog
+	url = https://github.com/google/glog.git
+[submodule "extern/boost"]
+	path = extern/boost
+	url = https://github.com/boostorg/boost.git
+[submodule "src/extern/cmake-helpers"]
+	path = src/extern/cmake-helpers
+	url = https://github.com/kbrunham/cmake_helpers.git
+[submodule "src/extern/cmake-modules"]
+	path = src/extern/cmake-modules
+	url = https://github.com/bilke/cmake-modules.git
+[submodule "src/extern/googletest"]
+	path = src/extern/googletest
+	url = https://github.com/google/googletest.git
+[submodule "src/extern/cxxopts"]
+	path = src/extern/cxxopts
+	url = https://github.com/jarro2783/cxxopts.git
