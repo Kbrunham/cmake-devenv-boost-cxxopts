@@ -7,11 +7,11 @@ include(ExternalProject)
 option(PERFORM_FULL_BUILD "Build environment and source (ON) or environment only (OFF)" OFF)
 
 # Add boost
-set(BOOST_VERSION "1.75.0")
+set(BOOST_VERSION "1.82.0")
 if (WIN32)
 	set(BOOST_BOOTSTRAP_CMD "bootstrap.bat")
 	set(BOOST_B2_CMD "b2.exe")
-	set(BOOST_INCDIR_PATH "${CMAKE_CURRENT_SOURCE_DIR}/extlibs/boost/include/boost-1_75")
+	set(BOOST_INCDIR_PATH "${CMAKE_CURRENT_SOURCE_DIR}/extlibs/boost/include/boost-1_82")
 else()
 	set(BOOST_BOOTSTRAP_CMD "./bootstrap.sh")
 	set(BOOST_B2_CMD "./b2")
@@ -19,11 +19,11 @@ else()
 endif()
 ExternalProject_Add(boost
 	PREFIX ${CMAKE_CURRENT_BINARY_DIR}/boost
-	URL https://dl.bintray.com/boostorg/release/1.75.0/source/boost_1_75_0.tar.bz2
-	URL_HASH SHA256=953db31e016db7bb207f11432bef7df100516eeb746843fa0486a222e3fd49cb
-	# GIT_REPOSITORY https://github.com/boostorg/boost.git
-	# GIT_TAG boost-${BOOST_VERSION}
-	# GIT_PROGRESS 1
+	# URL https://dl.bintray.com/boostorg/release/1.75.0/source/boost_1_75_0.tar.bz2
+	# URL_HASH SHA256=953db31e016db7bb207f11432bef7df100516eeb746843fa0486a222e3fd49cb
+	GIT_REPOSITORY https://github.com/boostorg/boost.git
+	GIT_TAG boost-${BOOST_VERSION}
+	GIT_PROGRESS 1
 	BUILD_IN_SOURCE 1
 	CONFIGURE_COMMAND ${BOOST_BOOTSTRAP_CMD}
 	BUILD_COMMAND ${BOOST_B2_CMD} 
@@ -44,7 +44,7 @@ ExternalProject_Add(boost
 )
 
 # Add OpenSSL
-set(OPENSSL_VERSION "OpenSSL_1_1_1i")
+set(OPENSSL_VERSION "OpenSSL_1_1_1u")
 if (WIN32)
 	set(OPENSSL_CONFIGURE_CMD_PLATFORM "VC-WIN64A")
 	set(OPENSSL_BUILD_CMD "nmake")
@@ -54,10 +54,10 @@ else()
 endif()
 ExternalProject_Add(openssl
 	PREFIX ${CMAKE_CURRENT_BINARY_DIR}/openssl
-	URL https://github.com/openssl/openssl/archive/OpenSSL_1_1_1i.tar.gz
-	#GIT_REPOSITORY https://github.com/openssl/openssl.git 
-	#GIT_TAG ${OPENSSL_VERSION}
-	#GIT_PROGRESS 1	
+	#URL https://github.com/openssl/openssl/archive/OpenSSL_1_1_1u.tar.gz
+	GIT_REPOSITORY https://github.com/openssl/openssl.git 
+	GIT_TAG ${OPENSSL_VERSION}
+	GIT_PROGRESS 1	
 	BUILD_IN_SOURCE 1
 	CONFIGURE_COMMAND perl
 		Configure
